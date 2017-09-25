@@ -1,3 +1,7 @@
-<?php include('header.php');?>
-<h2>Hello world</h2>
-<?php include('footer.php');?>
+<?php get_header('header.php');?>
+
+<?php if (have_posts()):while(have_posts()):the_post();?>
+  <h2><?php the_title();?></h2>
+  <p><?php the_content();?></p>
+<?php endwhile; endif;?>
+<?php get_footer('footer.php');?>
